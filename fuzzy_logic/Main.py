@@ -1,44 +1,30 @@
-# AI tools
+"""
+Fuzzy Logic (Traffic Lights Simulation)
 
-_(The projects undertaken in 2023 and 2024 during the AI tools course, as a part of the bachelor's degree program in
-computer science at Polsko-Japońska Akademia Technik Komputerowych, Gdańsk)._
-
-## Fuzzy Logic (Traffic Lights Simulation)
-
-### Installation:
-
+Installation:
 Assuming you have pip installed, enter the following commands in your terminal:
+sudo pip install scikit-fuzzy – with regard to the mechanism implementing fuzzy logic,
+sudo pip install matplotlib – with regard to the visualisation of the road junction.
 
-* ```sudo pip install scikit-fuzzy``` – with regard to the mechanism implementing fuzzy logic,
-* ```sudo pip install matplotlib``` – with regard to the visualisation of the road junction.
-
-### Overview:
-
+Overview:
 This model demonstrates the operation of traffic lights at a road junction based on input variables such as traffic
 density (corresponding with time of day), car queuing (i.e. queue length at the junction), road visibility (affected by
 factors like rain and fog), and the presence of emergency situations.
-
 In the code, we define variables, membership functions, and rules for implementing fuzzy logic. This enables the
 simulation of a traffic light control system, helping determine the optimal duration for the green light.
 
-### Authors:
-
+Authors:
 By Maciej Zagórski and Łukasz Dawidowski
 
-### Sources:
-
+Sources:
 https://scikit-fuzzy.github.io/scikit-fuzzy/ , https://github.com/scikit-fuzzy (scikit-fuzzy documentation)
-
 https://matplotlib.org/stable/ , https://github.com/matplotlib (matplotlib documentation)
+“Application of fuzzy logic to control traffic signals”
+(https://pubs.aip.org/aip/acp/article-pdf/doi/10.1063/1.5112230/14186507/020045_1_online.pdf)
+https://github.com/woo-chia-wei/traffic-fuzzy-control/tree/master (example of applying the fuzzy logic to the road
+junction and the traffic simulation)
 
-_Application of fuzzy logic to control traffic
-signals_ (https://pubs.aip.org/aip/acp/article-pdf/doi/10.1063/1.5112230/14186507/020045_1_online.pdf)
-
-https://github.com/woo-chia-wei/traffic-fuzzy-control/tree/master (example of applying the fuzzy logic to a road
-junction and traffic simulation)
-
-### Usage:
-
+Usage:
 * Modify the input values for “emergency”, “traffic_during_day”, “cars_queuing”, and “air_transparency” in the Animation
   class (by default, they are determined randomly; the parameter ranges can be adjusted in the TrafficLightControlSystem
   class).
@@ -46,5 +32,12 @@ junction and traffic simulation)
    fuzzy logic.
 * Visualize the results using the animation of the road junction and the real-life traffic simulation (click on the
   junction to run the animation).
+"""
 
-![Plotted membership functions and sample traffic simulation](screenshot_fuzzy_logic_traffic.png)
+from Animation import Animation
+import matplotlib.pyplot as plt
+
+if __name__ == "__main__":
+    a = Animation()
+    a.tlcs.show_views()
+    plt.show()
